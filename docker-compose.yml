@@ -5,6 +5,7 @@ services:
       args:
         - target=dev
     volumes:
-      - .:app
+      - .:/app
     ports:
-      - "18000:80"
+      - "18000:8080"
+    # [air で実行するため不要]command: sh -c "go build -o ./tmp/main . && APP_ENV=dev APP_USER=air ./tmp/main 8080"
