@@ -4,4 +4,4 @@ go 1.22.2
 
 require golang.org/x/sync v0.7.0
 
-require github.com/caarlos0/env/v11 v11.2.0 // indirect
+require github.com/caarlos0/env/v11 v11.2.0
