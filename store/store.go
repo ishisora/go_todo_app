@@ -15,7 +15,7 @@ var (
 type TaskStore struct {
 	// 動作確認用の仮実装のため、あえてexportしている
 	LastID entity.TaskID
-	Tasks  map[entity.Task]*entity.Task
+	Tasks  map[entity.TaskID]*entity.Task
 }
 
 func (ts *TaskStore) Add(t *entity.Task) (entity.TaskID, error) {
