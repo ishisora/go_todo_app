@@ -6,6 +6,7 @@ require golang.org/x/sync v0.7.0
 
 require (
 	github.com/caarlos0/env/v11 v11.2.0
+	github.com/go-chi/chi/v5 v5.1.0
 	github.com/go-playground/validator v9.31.0+incompatible
 )
 
