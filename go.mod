@@ -10,7 +10,7 @@ require (
 	github.com/go-playground/validator v9.31.0+incompatible
 )
 
-require github.com/jmoiron/sqlx v1.4.0 // indirect
+require github.com/jmoiron/sqlx v1.4.0
 
 require (
 	github.com/go-playground/locales v0.14.1 // indirect
