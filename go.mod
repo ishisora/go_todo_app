@@ -1,8 +1,10 @@
 module github.com/ishisora/go_todo_app
 
-go 1.22.2
+go 1.23
 
-require golang.org/x/sync v0.7.0
+toolchain go1.23.1
+
+require golang.org/x/sync v0.8.0
 
 require (
 	github.com/caarlos0/env/v11 v11.2.0
@@ -17,7 +19,12 @@ require (
 	github.com/go-sql-driver/mysql v1.8.1
 )
 
-require filippo.io/edwards25519 v1.1.0 // indirect
+require (
+	filippo.io/edwards25519 v1.1.0 // indirect
+	github.com/matryer/moq v0.5.0 // indirect
+	golang.org/x/mod v0.21.0 // indirect
+	golang.org/x/tools v0.25.0 // indirect
+)
 
 require (
 	github.com/go-playground/locales v0.14.1 // indirect
