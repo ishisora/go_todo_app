@@ -17,11 +17,11 @@ require github.com/jmoiron/sqlx v1.4.0
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/go-sql-driver/mysql v1.8.1
+	github.com/matryer/moq v0.5.0
 )
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
-	github.com/matryer/moq v0.5.0 // indirect
 	golang.org/x/mod v0.21.0 // indirect
 	golang.org/x/tools v0.25.0 // indirect
 )
