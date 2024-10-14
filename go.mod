@@ -17,6 +17,7 @@ require github.com/jmoiron/sqlx v1.4.0
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/go-sql-driver/mysql v1.8.1
+	github.com/google/uuid v1.6.0
 	github.com/lestrrat-go/jwx/v2 v2.1.1
 	github.com/matryer/moq v0.5.0
 	github.com/redis/go-redis/v9 v9.6.1
