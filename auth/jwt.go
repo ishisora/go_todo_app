@@ -37,7 +37,7 @@ type Store interface {
 	Load(ctx context.Context, key string) (entity.UserID, error)
 }
 
-func NewJWTer(s Store) (*JWTer, error) {
+func NewJWTer(s Store, c clock.Clocker) (*JWTer, error) {
 	j := &JWTer{Store: s}
 	privkey, err := parse(rawPrivKey)
 	if err != nil {
@@ -49,7 +49,7 @@ func NewJWTer(s Store) (*JWTer, error) {
 	}
 	j.PrivateKey = privkey
 	j.PublicKey = pubkey
-	j.Clocker = clock.RealClocker{}
+	j.Clocker = c
 	return j, nil
 }
 
