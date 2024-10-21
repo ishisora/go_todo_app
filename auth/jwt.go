@@ -108,6 +108,22 @@ func (j *JWTer) GetToken(ctx context.Context, r *http.Request) (jwt.Token, error
 type userIDKey struct{}
 type roleKey struct{}
 
+func (j *JWTer) FillContext(r *http.Request) (*http.Request, error) {
+	token, err := j.GetToken(r.Context(), r)
+	if err != nil {
+		return nil, err
+	}
+	uid, err := j.Store.Load(r.Context(), token.JwtID())
+	if err != nil {
+		return nil, err
+	}
+	ctx := SetUserID(r.Context(), uid)
+
+	ctx = SetRole(ctx, token)
+	clone := r.Clone(ctx)
+	return clone, nil
+}
+
 func SetUserID(ctx context.Context, uid entity.UserID) context.Context {
 	return context.WithValue(ctx, userIDKey{}, uid)
 }
