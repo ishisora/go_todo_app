@@ -145,3 +145,11 @@ func GetRole(ctx context.Context) (string, bool) {
 	role, ok := ctx.Value(roleKey{}).(string)
 	return role, ok
 }
+
+func IsAdmin(ctx context.Context) bool {
+	role, ok := GetRole(ctx)
+	if !ok {
+		return false
+	}
+	return role == "admin"
+}
