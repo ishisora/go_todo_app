@@ -21,3 +21,7 @@ tmp/
 # Go workspace file
 go.work
 go.work.sum
+
+# memo and todo text
+memo.md
+todo.txt
