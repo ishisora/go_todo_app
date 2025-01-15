@@ -1,6 +1,10 @@
+# See: https://golangci-lint.run/usage/configuration/
 linters-settings:
   govet:
-    check-shadowing: false
+    enable-all: true
+    disable:
+      - shadow
+      - fieldalignment
   gocyclo:
     min-complexity: 30
   misspell:
@@ -10,7 +14,7 @@ linters:
   disable-all: true
   enable:
     - goimports
-    - deadcode
+    - unused
     - errcheck
     - gocognit
     - gocritic
