@@ -30,3 +30,12 @@ func (r *Repository) ListTasks(ctx context.Context, db Queryer, id entity.UserID
 	}
 	return tasks, nil
 }
+
+func (r *Repository) GetTask(ctx context.Context, db Queryer, id entity.TaskID, userId entity.UserID) (*entity.Task, error) {
+	task := &entity.Task{}
+	sql := `SELECT id, user_id, title, status, created, modified FROM task WHERE id = ? && user_id = ?;`
+	if err := db.GetContext(ctx, task, sql, id, userId); err != nil {
+		return nil, err
+	}
+	return task, nil
+}
